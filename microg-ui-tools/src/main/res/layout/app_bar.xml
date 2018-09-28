@@ -45,7 +45,6 @@
         android:gravity="start"
         android:textAlignment="viewStart"
         android:textColor="?android:attr/textColorPrimaryInverse"
-        android:theme="@style/TextAppearance.AppCompat.Title.Inverse"/>
 
 </RelativeLayout>
 
