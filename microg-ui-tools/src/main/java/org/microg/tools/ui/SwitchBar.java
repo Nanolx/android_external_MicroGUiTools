@@ -55,7 +55,8 @@ public class SwitchBar extends LinearLayout implements CompoundButton.OnCheckedC
     private TextView mTextView;
     private String mLabel;
     private String mSummary;
-
+    private LinearLayout Switchbar;
+                
     private ArrayList<OnSwitchChangeListener> mSwitchChangeListeners =
             new ArrayList<OnSwitchChangeListener>();
 
@@ -68,6 +69,7 @@ public class SwitchBar extends LinearLayout implements CompoundButton.OnCheckedC
 
         LayoutInflater.from(context).inflate(R.layout.switch_bar, this);
 
+        Switchbar = (LinearLayout) findViewById(R.id.switch_bar);
         mTextView = (TextView) findViewById(R.id.switch_text);
         if (SDK_INT > Build.VERSION_CODES.JELLY_BEAN) {
             mTextView.setImportantForAccessibility(IMPORTANT_FOR_ACCESSIBILITY_NO);
@@ -88,6 +90,11 @@ public class SwitchBar extends LinearLayout implements CompoundButton.OnCheckedC
             @Override
             public void onSwitchChanged(SwitchCompat switchView, boolean isChecked) {
                 setTextViewLabel(isChecked);
+                if(mSwitch.isChecked()){
+                    Switchbar.setBackgroundColor(0xFF1A73E8);}
+                else{
+                    Switchbar.setBackgroundColor(0xFF80868B);
+                }
             }
         });
 
